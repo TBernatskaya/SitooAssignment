@@ -9,10 +9,20 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    let productService: ProductService
+    var viewModel: ProductListViewModel
 
-    init(productService: ProductService = ProductServiceImpl()) {
-        self.productService = productService
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .white
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(ProductCell.self, forCellWithReuseIdentifier: ProductCell.reuseIdentifier)
+        return collectionView
+    }()
+
+    init(viewModel: ProductListViewModel = ProductListViewModelImpl()) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -22,14 +32,79 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        productService.fetchProductList(startIndex: 0, itemsCount: 10, completion: { list, error in
-            print(error)
-            print(list)
+        view.backgroundColor = .white
+        view.addSubview(collectionView)
+        collectionView.delegate = self
+        collectionView.dataSource = self
 
-            self.productService.fetchProduct(by: 1, completion: { product, error in
-                print(error)
-                print(product)
-            })
+        viewModel.fetchProductList(completion: { list, error in
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         })
+        updateConstraints()
+    }
+
+    private func updateConstraints() {
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30)
+        ])
+    }
+}
+
+
+extension MainViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let list = viewModel.list else { return 0 }
+        return list.products.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.reuseIdentifier,
+                                                          for: indexPath) as? ProductCell,
+        let productList = viewModel.list
+        else { return UICollectionViewCell() }
+
+        cell.title.text = productList.products[indexPath.row].title
+        cell.price.text = productList.products[indexPath.row].price
+
+        return cell
+    }
+}
+
+extension MainViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //
+    }
+
+}
+
+extension MainViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        //
+    }
+}
+
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 44)
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
     }
 }
