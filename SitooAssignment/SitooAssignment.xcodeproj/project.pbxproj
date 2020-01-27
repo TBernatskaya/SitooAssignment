@@ -3,17 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57279480FF438AD45C2C8ABC /* Pods_SitooAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0907915D812A4DAAAFD18F15 /* Pods_SitooAssignmentTests.framework */; };
+		8B9B46DFB067DE2447CF11D7 /* Pods_SitooAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5241C5046E495CD062DDA30C /* Pods_SitooAssignment.framework */; };
+		D8923EBE23DF1CEF00CF2871 /* productList.json in Resources */ = {isa = PBXBuildFile; fileRef = D8923EBD23DF1CEF00CF2871 /* productList.json */; };
 		D8EA131823DEF80B009152AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA131723DEF80B009152AC /* AppDelegate.swift */; };
 		D8EA131A23DEF80B009152AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA131923DEF80B009152AC /* SceneDelegate.swift */; };
 		D8EA131C23DEF80B009152AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA131B23DEF80B009152AC /* MainViewController.swift */; };
 		D8EA131E23DEF80D009152AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8EA131D23DEF80D009152AC /* Assets.xcassets */; };
 		D8EA132123DEF80D009152AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8EA132023DEF80D009152AC /* Preview Assets.xcassets */; };
 		D8EA132423DEF80D009152AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8EA132223DEF80D009152AC /* LaunchScreen.storyboard */; };
-		D8EA132F23DEF80D009152AC /* SitooAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA132E23DEF80D009152AC /* SitooAssignmentTests.swift */; };
+		D8EA132F23DEF80D009152AC /* ProductServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA132E23DEF80D009152AC /* ProductServiceTests.swift */; };
 		D8EA133A23DEF939009152AC /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA133923DEF939009152AC /* ProductService.swift */; };
 		D8EA133F23DF0C61009152AC /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA133E23DF0C61009152AC /* ProductList.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +32,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0907915D812A4DAAAFD18F15 /* Pods_SitooAssignmentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SitooAssignmentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		270CBA2991E992FD673FF899 /* Pods-SitooAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitooAssignment.release.xcconfig"; path = "Target Support Files/Pods-SitooAssignment/Pods-SitooAssignment.release.xcconfig"; sourceTree = "<group>"; };
+		27B50789147C824DDFA1295F /* Pods-SitooAssignmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitooAssignmentTests.release.xcconfig"; path = "Target Support Files/Pods-SitooAssignmentTests/Pods-SitooAssignmentTests.release.xcconfig"; sourceTree = "<group>"; };
+		5241C5046E495CD062DDA30C /* Pods_SitooAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SitooAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F7156F722930C0180304CAB /* Pods-SitooAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitooAssignment.debug.xcconfig"; path = "Target Support Files/Pods-SitooAssignment/Pods-SitooAssignment.debug.xcconfig"; sourceTree = "<group>"; };
+		A188B3C5CC1BA61BBAA81987 /* Pods-SitooAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitooAssignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-SitooAssignmentTests/Pods-SitooAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D8923EBD23DF1CEF00CF2871 /* productList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = productList.json; sourceTree = "<group>"; };
 		D8EA131423DEF80B009152AC /* SitooAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SitooAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8EA131723DEF80B009152AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8EA131923DEF80B009152AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +48,7 @@
 		D8EA132323DEF80D009152AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8EA132523DEF80D009152AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8EA132A23DEF80D009152AC /* SitooAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SitooAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8EA132E23DEF80D009152AC /* SitooAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitooAssignmentTests.swift; sourceTree = "<group>"; };
+		D8EA132E23DEF80D009152AC /* ProductServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductServiceTests.swift; sourceTree = "<group>"; };
 		D8EA133023DEF80D009152AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8EA133923DEF939009152AC /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		D8EA133E23DF0C61009152AC /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
@@ -49,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B9B46DFB067DE2447CF11D7 /* Pods_SitooAssignment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,18 +67,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57279480FF438AD45C2C8ABC /* Pods_SitooAssignmentTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C8C660AC9C25146699B988B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F7156F722930C0180304CAB /* Pods-SitooAssignment.debug.xcconfig */,
+				270CBA2991E992FD673FF899 /* Pods-SitooAssignment.release.xcconfig */,
+				A188B3C5CC1BA61BBAA81987 /* Pods-SitooAssignmentTests.debug.xcconfig */,
+				27B50789147C824DDFA1295F /* Pods-SitooAssignmentTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		36B7A1CFB61C2BBB18807A48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5241C5046E495CD062DDA30C /* Pods_SitooAssignment.framework */,
+				0907915D812A4DAAAFD18F15 /* Pods_SitooAssignmentTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8EA130B23DEF80B009152AC = {
 			isa = PBXGroup;
 			children = (
 				D8EA131623DEF80B009152AC /* SitooAssignment */,
 				D8EA132D23DEF80D009152AC /* SitooAssignmentTests */,
 				D8EA131523DEF80B009152AC /* Products */,
+				2C8C660AC9C25146699B988B /* Pods */,
+				36B7A1CFB61C2BBB18807A48 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,7 +141,8 @@
 		D8EA132D23DEF80D009152AC /* SitooAssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
-				D8EA132E23DEF80D009152AC /* SitooAssignmentTests.swift */,
+				D8923EBD23DF1CEF00CF2871 /* productList.json */,
+				D8EA132E23DEF80D009152AC /* ProductServiceTests.swift */,
 				D8EA133023DEF80D009152AC /* Info.plist */,
 			);
 			path = SitooAssignmentTests;
@@ -120,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8EA133323DEF80D009152AC /* Build configuration list for PBXNativeTarget "SitooAssignment" */;
 			buildPhases = (
+				C87673834CDE893097D968C3 /* [CP] Check Pods Manifest.lock */,
 				D8EA131023DEF80B009152AC /* Sources */,
 				D8EA131123DEF80B009152AC /* Frameworks */,
 				D8EA131223DEF80B009152AC /* Resources */,
+				55351717C1B46111565FAE16 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,6 +174,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8EA133623DEF80D009152AC /* Build configuration list for PBXNativeTarget "SitooAssignmentTests" */;
 			buildPhases = (
+				2FC62CB938B66930CD2E01FC /* [CP] Check Pods Manifest.lock */,
 				D8EA132623DEF80D009152AC /* Sources */,
 				D8EA132723DEF80D009152AC /* Frameworks */,
 				D8EA132823DEF80D009152AC /* Resources */,
@@ -204,10 +242,75 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8923EBE23DF1CEF00CF2871 /* productList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FC62CB938B66930CD2E01FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SitooAssignmentTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55351717C1B46111565FAE16 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SitooAssignment/Pods-SitooAssignment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SitooAssignment/Pods-SitooAssignment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SitooAssignment/Pods-SitooAssignment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C87673834CDE893097D968C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SitooAssignment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D8EA131023DEF80B009152AC /* Sources */ = {
@@ -226,7 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8EA132F23DEF80D009152AC /* SitooAssignmentTests.swift in Sources */,
+				D8EA132F23DEF80D009152AC /* ProductServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +471,7 @@
 		};
 		D8EA133423DEF80D009152AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F7156F722930C0180304CAB /* Pods-SitooAssignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -387,6 +491,7 @@
 		};
 		D8EA133523DEF80D009152AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 270CBA2991E992FD673FF899 /* Pods-SitooAssignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -406,6 +511,7 @@
 		};
 		D8EA133723DEF80D009152AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A188B3C5CC1BA61BBAA81987 /* Pods-SitooAssignmentTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -427,6 +533,7 @@
 		};
 		D8EA133823DEF80D009152AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B50789147C824DDFA1295F /* Pods-SitooAssignmentTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

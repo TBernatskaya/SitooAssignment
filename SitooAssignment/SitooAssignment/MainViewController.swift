@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainViewController.swift
 //  SitooAssignment
 //
 //  Created by Tatiana Bernatskaya on 2020-01-27.
