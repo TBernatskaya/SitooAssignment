@@ -14,6 +14,7 @@
 		D8923EC323DF370D00CF2871 /* product.json in Resources */ = {isa = PBXBuildFile; fileRef = D8923EC223DF370D00CF2871 /* product.json */; };
 		D8923EC823DF454200CF2871 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8923EC723DF454200CF2871 /* ProductListViewModel.swift */; };
 		D8923ECA23DF4EF000CF2871 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8923EC923DF4EF000CF2871 /* ProductCell.swift */; };
+		D8923ECD23DF69D900CF2871 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8923ECC23DF69D900CF2871 /* ProductDetailsViewController.swift */; };
 		D8EA131823DEF80B009152AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA131723DEF80B009152AC /* AppDelegate.swift */; };
 		D8EA131A23DEF80B009152AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA131923DEF80B009152AC /* SceneDelegate.swift */; };
 		D8EA131C23DEF80B009152AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA131B23DEF80B009152AC /* MainViewController.swift */; };
@@ -47,6 +48,7 @@
 		D8923EC223DF370D00CF2871 /* product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = product.json; sourceTree = "<group>"; };
 		D8923EC723DF454200CF2871 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		D8923EC923DF4EF000CF2871 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		D8923ECC23DF69D900CF2871 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		D8EA131423DEF80B009152AC /* SitooAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SitooAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8EA131723DEF80B009152AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8EA131923DEF80B009152AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				D8EA131723DEF80B009152AC /* AppDelegate.swift */,
 				D8EA131923DEF80B009152AC /* SceneDelegate.swift */,
 				D8EA131B23DEF80B009152AC /* MainViewController.swift */,
+				D8923ECC23DF69D900CF2871 /* ProductDetailsViewController.swift */,
 				D8923EC923DF4EF000CF2871 /* ProductCell.swift */,
 				D8923EC723DF454200CF2871 /* ProductListViewModel.swift */,
 				D8EA131D23DEF80D009152AC /* Assets.xcassets */,
@@ -344,6 +347,7 @@
 				D8923EC823DF454200CF2871 /* ProductListViewModel.swift in Sources */,
 				D8EA131A23DEF80B009152AC /* SceneDelegate.swift in Sources */,
 				D8923ECA23DF4EF000CF2871 /* ProductCell.swift in Sources */,
+				D8923ECD23DF69D900CF2871 /* ProductDetailsViewController.swift in Sources */,
 				D8EA131C23DEF80B009152AC /* MainViewController.swift in Sources */,
 				D8923EC023DF203B00CF2871 /* Product.swift in Sources */,
 			);

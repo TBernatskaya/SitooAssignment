@@ -53,20 +53,37 @@ class MainViewController: UIViewController {
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30)
         ])
     }
+
+    private func openProductDetails(index: Int) {
+        viewModel.fetchProduct(by: index, completion: { product, error in
+            guard let product = product else { return }
+            DispatchQueue.main.async {
+                self.present(
+                    ProductDetailsViewController(product: product),
+                    animated: true,
+                    completion: nil
+                )
+            }
+        })
+    }
 }
 
 
 extension MainViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         guard let list = viewModel.list else { return 0 }
         return list.products.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.reuseIdentifier,
-                                                          for: indexPath) as? ProductCell,
-        let productList = viewModel.list
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ProductCell.reuseIdentifier,
+                for: indexPath
+            ) as? ProductCell,
+            let productList = viewModel.list
         else { return UICollectionViewCell() }
 
         cell.title.text = productList.products[indexPath.row].title
@@ -77,14 +94,17 @@ extension MainViewController: UICollectionViewDataSource {
 }
 
 extension MainViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        guard let productList = viewModel.list else { return }
+        let index = productList.products[indexPath.row].id
+        openProductDetails(index: index)
     }
-
 }
 
 extension MainViewController: UICollectionViewDataSourcePrefetching {
-    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+    func collectionView(_ collectionView: UICollectionView,
+                        prefetchItemsAt indexPaths: [IndexPath]) {
         //
     }
 }

@@ -13,7 +13,6 @@ class ProductCell: UICollectionViewCell {
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.title, self.price])
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
         stackView.spacing = 4

@@ -10,6 +10,7 @@ import Foundation
 
 protocol ProductListViewModel {
     var list: ProductList? { get }
+    func fetchProduct(by index: Int, completion: @escaping (Product?, Error?) -> ())
     func fetchProductList(completion: @escaping (ProductList?, Error?) -> ())
 }
 
@@ -21,6 +22,13 @@ class ProductListViewModelImpl: ProductListViewModel {
 
     init(productService: ProductService = ProductServiceImpl()) {
         self.productService = productService
+    }
+
+    func fetchProduct(by index: Int, completion: @escaping (Product?, Error?) -> ()) {
+        productService.fetchProduct(by: index, completion: { product, error in
+            guard let product = product else { return completion(nil, error) }
+            completion(product, error)
+        })
     }
 
     func fetchProductList(completion: @escaping (ProductList?, Error?) -> ()) {
