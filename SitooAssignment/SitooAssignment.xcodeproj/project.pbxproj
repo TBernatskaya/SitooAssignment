@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07784D25774A45BDDC9C8C7E /* Pods_SitooAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBDABEF32B93D92D2F28E97 /* Pods_SitooAssignmentTests.framework */; };
+		7EEB1718A329233C78DA4AC4 /* Pods_SitooAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8428D2B6802460B1043F65C /* Pods_SitooAssignment.framework */; };
 		D8EA131823DEF80B009152AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA131723DEF80B009152AC /* AppDelegate.swift */; };
 		D8EA131A23DEF80B009152AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA131923DEF80B009152AC /* SceneDelegate.swift */; };
 		D8EA131C23DEF80B009152AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA131B23DEF80B009152AC /* MainViewController.swift */; };
@@ -29,6 +31,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2738983C6B00772231AB7CC4 /* Pods-SitooAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitooAssignment.release.xcconfig"; path = "Target Support Files/Pods-SitooAssignment/Pods-SitooAssignment.release.xcconfig"; sourceTree = "<group>"; };
+		2BBDABEF32B93D92D2F28E97 /* Pods_SitooAssignmentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SitooAssignmentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5964BA27A286D51FF3E3B9E9 /* Pods-SitooAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitooAssignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-SitooAssignmentTests/Pods-SitooAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8B9F740557098BD6F17C8E81 /* Pods-SitooAssignmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitooAssignmentTests.release.xcconfig"; path = "Target Support Files/Pods-SitooAssignmentTests/Pods-SitooAssignmentTests.release.xcconfig"; sourceTree = "<group>"; };
+		D8428D2B6802460B1043F65C /* Pods_SitooAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SitooAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8EA131423DEF80B009152AC /* SitooAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SitooAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8EA131723DEF80B009152AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8EA131923DEF80B009152AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +49,7 @@
 		D8EA133023DEF80D009152AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8EA133923DEF939009152AC /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		D8EA133E23DF0C61009152AC /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
+		E257C343AD85DD85C434906F /* Pods-SitooAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitooAssignment.debug.xcconfig"; path = "Target Support Files/Pods-SitooAssignment/Pods-SitooAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EEB1718A329233C78DA4AC4 /* Pods_SitooAssignment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,18 +65,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07784D25774A45BDDC9C8C7E /* Pods_SitooAssignmentTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7398781F55A69B76D2569816 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E257C343AD85DD85C434906F /* Pods-SitooAssignment.debug.xcconfig */,
+				2738983C6B00772231AB7CC4 /* Pods-SitooAssignment.release.xcconfig */,
+				5964BA27A286D51FF3E3B9E9 /* Pods-SitooAssignmentTests.debug.xcconfig */,
+				8B9F740557098BD6F17C8E81 /* Pods-SitooAssignmentTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D8EA130B23DEF80B009152AC = {
 			isa = PBXGroup;
 			children = (
 				D8EA131623DEF80B009152AC /* SitooAssignment */,
 				D8EA132D23DEF80D009152AC /* SitooAssignmentTests */,
 				D8EA131523DEF80B009152AC /* Products */,
+				7398781F55A69B76D2569816 /* Pods */,
+				F90AB58666FE7BC5412D4976 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +137,15 @@
 			path = SitooAssignmentTests;
 			sourceTree = "<group>";
 		};
+		F90AB58666FE7BC5412D4976 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8428D2B6802460B1043F65C /* Pods_SitooAssignment.framework */,
+				2BBDABEF32B93D92D2F28E97 /* Pods_SitooAssignmentTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -120,6 +153,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8EA133323DEF80D009152AC /* Build configuration list for PBXNativeTarget "SitooAssignment" */;
 			buildPhases = (
+				969D054F77B6A0AFAB4E56CD /* [CP] Check Pods Manifest.lock */,
 				D8EA131023DEF80B009152AC /* Sources */,
 				D8EA131123DEF80B009152AC /* Frameworks */,
 				D8EA131223DEF80B009152AC /* Resources */,
@@ -137,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8EA133623DEF80D009152AC /* Build configuration list for PBXNativeTarget "SitooAssignmentTests" */;
 			buildPhases = (
+				CADFEB4A4BA40671D5C9AED1 /* [CP] Check Pods Manifest.lock */,
 				D8EA132623DEF80D009152AC /* Sources */,
 				D8EA132723DEF80D009152AC /* Frameworks */,
 				D8EA132823DEF80D009152AC /* Resources */,
+				C2E162C92C199366BB58643D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -208,6 +244,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		969D054F77B6A0AFAB4E56CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SitooAssignment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2E162C92C199366BB58643D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SitooAssignmentTests/Pods-SitooAssignmentTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SitooAssignmentTests/Pods-SitooAssignmentTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SitooAssignmentTests/Pods-SitooAssignmentTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CADFEB4A4BA40671D5C9AED1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SitooAssignmentTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D8EA131023DEF80B009152AC /* Sources */ = {
@@ -368,6 +468,7 @@
 		};
 		D8EA133423DEF80D009152AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E257C343AD85DD85C434906F /* Pods-SitooAssignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -387,6 +488,7 @@
 		};
 		D8EA133523DEF80D009152AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2738983C6B00772231AB7CC4 /* Pods-SitooAssignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -406,6 +508,7 @@
 		};
 		D8EA133723DEF80D009152AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5964BA27A286D51FF3E3B9E9 /* Pods-SitooAssignmentTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -427,6 +530,7 @@
 		};
 		D8EA133823DEF80D009152AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B9F740557098BD6F17C8E81 /* Pods-SitooAssignmentTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
