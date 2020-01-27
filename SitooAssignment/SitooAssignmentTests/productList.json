@@ -2,22 +2,27 @@
     "totalcount": 31,
     "items": [
         {
+            "productid": 1,
             "moneyprice": "10392.00",
             "title": "Sofa"
         },
         {
+            "productid": 2,
             "moneyprice": "10392.00",
             "title": "Kitchen Table"
         },
         {
+            "productid": 3,
             "moneyprice": "10392.00",
             "title": "Sofa Cosy"
         },
         {
+            "productid": 4,
             "moneyprice": "7592.00",
             "title": "Sofa Stressless"
         },
         {
+            "productid": 5,
             "moneyprice": "6392.00",
             "title": "Sofa Modern"
         }

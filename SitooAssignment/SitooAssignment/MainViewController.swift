@@ -25,6 +25,11 @@ class MainViewController: UIViewController {
         productService.fetchProductList(startIndex: 0, itemsCount: 10, completion: { list, error in
             print(error)
             print(list)
+
+            self.productService.fetchProduct(by: 1, completion: { product, error in
+                print(error)
+                print(product)
+            })
         })
     }
 }

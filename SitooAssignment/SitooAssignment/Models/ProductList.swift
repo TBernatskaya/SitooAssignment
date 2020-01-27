@@ -18,10 +18,12 @@ struct ProductList: Codable {
     }
 
     struct ProductListItem: Codable {
+        let id: Int
         let title: String
         let price: String
 
         enum CodingKeys: String, CodingKey {
+            case id = "productid"
             case title
             case price = "moneyprice"
         }

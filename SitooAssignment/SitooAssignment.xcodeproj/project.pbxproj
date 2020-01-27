@@ -10,6 +10,8 @@
 		57279480FF438AD45C2C8ABC /* Pods_SitooAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0907915D812A4DAAAFD18F15 /* Pods_SitooAssignmentTests.framework */; };
 		8B9B46DFB067DE2447CF11D7 /* Pods_SitooAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5241C5046E495CD062DDA30C /* Pods_SitooAssignment.framework */; };
 		D8923EBE23DF1CEF00CF2871 /* productList.json in Resources */ = {isa = PBXBuildFile; fileRef = D8923EBD23DF1CEF00CF2871 /* productList.json */; };
+		D8923EC023DF203B00CF2871 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8923EBF23DF203B00CF2871 /* Product.swift */; };
+		D8923EC323DF370D00CF2871 /* product.json in Resources */ = {isa = PBXBuildFile; fileRef = D8923EC223DF370D00CF2871 /* product.json */; };
 		D8EA131823DEF80B009152AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA131723DEF80B009152AC /* AppDelegate.swift */; };
 		D8EA131A23DEF80B009152AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA131923DEF80B009152AC /* SceneDelegate.swift */; };
 		D8EA131C23DEF80B009152AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EA131B23DEF80B009152AC /* MainViewController.swift */; };
@@ -39,6 +41,8 @@
 		9F7156F722930C0180304CAB /* Pods-SitooAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitooAssignment.debug.xcconfig"; path = "Target Support Files/Pods-SitooAssignment/Pods-SitooAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 		A188B3C5CC1BA61BBAA81987 /* Pods-SitooAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitooAssignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-SitooAssignmentTests/Pods-SitooAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D8923EBD23DF1CEF00CF2871 /* productList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = productList.json; sourceTree = "<group>"; };
+		D8923EBF23DF203B00CF2871 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		D8923EC223DF370D00CF2871 /* product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = product.json; sourceTree = "<group>"; };
 		D8EA131423DEF80B009152AC /* SitooAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SitooAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8EA131723DEF80B009152AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8EA131923DEF80B009152AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D8923EC123DF204500CF2871 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D8EA133E23DF0C61009152AC /* ProductList.swift */,
+				D8923EBF23DF203B00CF2871 /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D8EA130B23DEF80B009152AC = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +138,7 @@
 				D8EA132523DEF80D009152AC /* Info.plist */,
 				D8EA131F23DEF80D009152AC /* Preview Content */,
 				D8EA133923DEF939009152AC /* ProductService.swift */,
-				D8EA133E23DF0C61009152AC /* ProductList.swift */,
+				D8923EC123DF204500CF2871 /* Models */,
 			);
 			path = SitooAssignment;
 			sourceTree = "<group>";
@@ -141,6 +154,7 @@
 		D8EA132D23DEF80D009152AC /* SitooAssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
+				D8923EC223DF370D00CF2871 /* product.json */,
 				D8923EBD23DF1CEF00CF2871 /* productList.json */,
 				D8EA132E23DEF80D009152AC /* ProductServiceTests.swift */,
 				D8EA133023DEF80D009152AC /* Info.plist */,
@@ -243,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8923EBE23DF1CEF00CF2871 /* productList.json in Resources */,
+				D8923EC323DF370D00CF2871 /* product.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +337,7 @@
 				D8EA133A23DEF939009152AC /* ProductService.swift in Sources */,
 				D8EA131A23DEF80B009152AC /* SceneDelegate.swift in Sources */,
 				D8EA131C23DEF80B009152AC /* MainViewController.swift in Sources */,
+				D8923EC023DF203B00CF2871 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
