@@ -1,6 +1,0 @@
-framework module Pods_SitooAssignmentTests {
-  umbrella header "Pods-SitooAssignmentTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
