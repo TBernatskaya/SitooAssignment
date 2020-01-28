@@ -36,17 +36,9 @@ class MainViewController: UIViewController {
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
-
-        viewModel.fetchProductList(completion: { list, errorMessage in
-            if let _ = list {
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            } else {
-                self.presentAlert(with: errorMessage)
-            }
-        })
+        collectionView.prefetchDataSource = self
         updateConstraints()
+        updateList()
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -61,6 +53,19 @@ class MainViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60)
         ])
+    }
+
+    private func updateList() {
+        guard !viewModel.isFetching, !viewModel.hasFetchedAll else { return }
+        viewModel.fetchProductList(completion: { list, errorMessage in
+            if let _ = list {
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            } else {
+                self.presentAlert(with: errorMessage)
+            }
+        })
     }
 
     private func openProductDetails(index: Int) {
@@ -127,7 +132,7 @@ extension MainViewController: UICollectionViewDelegate {
 extension MainViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView,
                         prefetchItemsAt indexPaths: [IndexPath]) {
-        //
+        updateList()
     }
 }
 

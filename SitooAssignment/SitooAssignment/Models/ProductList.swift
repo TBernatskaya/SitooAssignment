@@ -10,7 +10,7 @@ import Foundation
 
 struct ProductList: Codable {
     let totalCount: Int
-    let products: [ProductListItem]
+    var products: [ProductListItem]
 
     enum CodingKeys: String, CodingKey {
         case totalCount = "totalcount"

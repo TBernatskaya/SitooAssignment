@@ -22,6 +22,7 @@ class ProductServiceImpl: ProductService {
             string: router.productDetails
                 .replacingOccurrences(of: "{id}", with: String(describing: productID))
         )!
+        print(url.absoluteString)
         var request = URLRequest(url: url)
         request.addAuthorizationHeaders()
 
@@ -44,6 +45,7 @@ class ProductServiceImpl: ProductService {
                 .replacingOccurrences(of: "{startIndex}", with: String(describing: startIndex))
                 .replacingOccurrences(of: "{itemsCount}", with: String(describing: itemsCount))
         )!
+        print(url.absoluteString)
         var request = URLRequest(url: url)
         request.addAuthorizationHeaders()
 
