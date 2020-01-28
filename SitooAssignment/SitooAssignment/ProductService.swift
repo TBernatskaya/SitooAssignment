@@ -39,51 +39,20 @@ class ProductServiceImpl: ProductService {
     }
 
     func fetchProduct(by productID: Int, completion: @escaping (Product?, Error?) -> ()) {
-        let url = URL(
-            string: router.productDetails
-                .replacingOccurrences(of: "{id}", with: String(describing: productID))
-        )!
-        print(url.absoluteString) // for testing purposes only
-        var request = URLRequest(url: url)
+        var request = router.fetchProductRequest(with: productID)
         request.addAuthorizationHeaders()
 
-        send(request: request, completion: { data, error in
-            guard let data = data else { return completion(nil, error) }
-            do {
-                let decoder = JSONDecoder()
-                let product = try decoder.decode(Product.self, from: data)
-                completion(product, nil)
-            }
-            catch {
-                completion(nil, error)
-            }
-        })
+        fetchAndDecode(request: request, type: Product.self, completion: completion)
     }
 
     func fetchProductList(startIndex: Int, itemsCount: Int, completion: @escaping (ProductList?, Error?) -> ()) {
-        let url = URL(
-            string: router.productList
-                .replacingOccurrences(of: "{startIndex}", with: String(describing: startIndex))
-                .replacingOccurrences(of: "{itemsCount}", with: String(describing: itemsCount))
-        )!
-        print(url.absoluteString) // for testing purposes only
-        var request = URLRequest(url: url)
+        var request = router.fetchProductListRequest(startIndex: startIndex, itemsCount: itemsCount)
         request.addAuthorizationHeaders()
 
-        send(request: request, completion: { data, error in
-            guard let data = data else { return completion(nil, error) }
-            do {
-                let decoder = JSONDecoder()
-                let list = try decoder.decode(ProductList.self, from: data)
-                completion(list, nil)
-            }
-            catch {
-                completion(nil, error)
-            }
-        })
+        fetchAndDecode(request: request, type: ProductList.self, completion: completion)
     }
 
-    private func send(request: URLRequest, completion: @escaping (Data?, Error?) -> ()) {
+    private func fetchAndDecode<T: Decodable>(request: URLRequest, type: T.Type, completion: @escaping (T?, Error?) -> ()) {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard
                 error == nil,
@@ -92,7 +61,14 @@ class ProductServiceImpl: ProductService {
             else {
                 return completion(nil, error)
             }
-           completion(data, nil)
+            do {
+               let decoder = JSONDecoder()
+               let model = try decoder.decode(type, from: data)
+               completion(model, nil)
+            }
+            catch {
+               completion(nil, error)
+            }
         }
         task.resume()
     }
@@ -125,6 +101,23 @@ struct Router {
         case productList = "/sites/1/products.json?start={startIndex}&num={itemsCount}&fields=productid,title,moneyprice"
         case productDetails = "/sites/1/products/{id}.json"
         case productImages = "/sites/1/products/{id}/images.json?num=1"
+    }
+
+    func fetchProductRequest(with productID: Int) -> URLRequest {
+        let url = URL(
+            string: productDetails
+                .replacingOccurrences(of: "{id}", with: String(describing: productID))
+        )!
+        return URLRequest(url: url)
+    }
+
+    func fetchProductListRequest(startIndex: Int, itemsCount: Int) -> URLRequest {
+        let url = URL(
+            string: productList
+                .replacingOccurrences(of: "{startIndex}", with: String(describing: startIndex))
+                .replacingOccurrences(of: "{itemsCount}", with: String(describing: itemsCount))
+        )!
+        return URLRequest(url: url)
     }
 }
 
