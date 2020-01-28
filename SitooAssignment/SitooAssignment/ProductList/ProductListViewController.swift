@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  ProductListViewController.swift
 //  SitooAssignment
 //
 //  Created by Tatiana Bernatskaya on 2020-01-27.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class ProductListViewController: UIViewController {
     var viewModel: ProductListViewModel
 
     lazy var collectionView: UICollectionView = {
@@ -69,19 +69,13 @@ class MainViewController: UIViewController {
     }
 
     private func openProductDetails(index: Int) {
-        viewModel.fetchProduct(by: index, completion: { product, errorMessage in
-            if let product = product {
-                DispatchQueue.main.async {
-                    self.present(
-                        ProductDetailsViewController(product: product),
-                        animated: true,
-                        completion: nil
-                    )
-                }
-            } else {
-                self.presentAlert(with: errorMessage)
-            }
-        })
+        DispatchQueue.main.async {
+            self.present(
+                ProductDetailsViewController(productIndex: index),
+                animated: true,
+                completion: nil
+            )
+        }
     }
 
     private func presentAlert(with title: String?) {
@@ -96,7 +90,7 @@ class MainViewController: UIViewController {
 }
 
 
-extension MainViewController: UICollectionViewDataSource {
+extension ProductListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         guard let list = viewModel.list else { return 0 }
@@ -120,7 +114,7 @@ extension MainViewController: UICollectionViewDataSource {
     }
 }
 
-extension MainViewController: UICollectionViewDelegate {
+extension ProductListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         guard let productList = viewModel.list else { return }
@@ -129,14 +123,14 @@ extension MainViewController: UICollectionViewDelegate {
     }
 }
 
-extension MainViewController: UICollectionViewDataSourcePrefetching {
+extension ProductListViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView,
                         prefetchItemsAt indexPaths: [IndexPath]) {
         updateList()
     }
 }
 
-extension MainViewController: UICollectionViewDelegateFlowLayout {
+extension ProductListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {

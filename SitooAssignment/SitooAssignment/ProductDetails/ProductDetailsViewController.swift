@@ -9,7 +9,14 @@
 import UIKit
 
 class ProductDetailsViewController: UIViewController {
-    let product: Product
+    var index: Int
+    let viewModel: ProductDetailsViewModel
+    
+    var product: Product? {
+        didSet {
+            updateView()
+        }
+    }
 
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.titleLabel,
@@ -51,8 +58,9 @@ class ProductDetailsViewController: UIViewController {
         return label
     }()
 
-    init(product: Product) {
-        self.product = product
+    init(productIndex: Int, productVM: ProductDetailsViewModel = ProductDetailsViewModelImpl()) {
+        self.index = productIndex
+        self.viewModel = productVM
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -65,11 +73,8 @@ class ProductDetailsViewController: UIViewController {
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stackView)
-        titleLabel.text = "Title: " + product.title
-        priceLabel.text = "Price: " + product.price
-        descriptionLabel.text = "Description: " + product.description
-        deliveryStatusLabel.text = "Delivery status: " + product.deliveryStatus
         setupConstraints()
+        fetchProductDetails()
     }
 
     private func setupConstraints() {
@@ -79,5 +84,37 @@ class ProductDetailsViewController: UIViewController {
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30)
         ])
+    }
+
+    private func fetchProductDetails() {
+        viewModel.fetchProduct(by: index, completion: { product, errorMessage in
+            if let product = product {
+                DispatchQueue.main.async {
+                    self.product = product
+                }
+            } else {
+                self.presentAlert(with: errorMessage)
+            }
+        })
+    }
+
+    private func updateView() {
+        guard let product = self.product else { return }
+
+        titleLabel.text = "Title: " + product.title
+        priceLabel.text = "Price: " + product.price
+        descriptionLabel.text = "Description: " + product.description
+        deliveryStatusLabel.text = "Delivery status: " + product.deliveryStatus
+
+    }
+
+    private func presentAlert(with title: String?) {
+        let title = title ?? "Unknown error"
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(.init(title: "OK", style: .cancel, handler: nil))
+
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }

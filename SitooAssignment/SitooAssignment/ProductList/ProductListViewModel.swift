@@ -13,7 +13,6 @@ protocol ProductListViewModel {
     var hasFetchedAll: Bool { get }
     var isFetching: Bool { get }
 
-    func fetchProduct(by index: Int, completion: @escaping (Product?, String?) -> ())
     func fetchProductList(completion: @escaping (ProductList?, String?) -> ())
 }
 
@@ -37,16 +36,6 @@ class ProductListViewModelImpl: ProductListViewModel {
         self.nextIndex = defaultStartIndex
     }
 
-    func fetchProduct(by index: Int, completion: @escaping (Product?, String?) -> ()) {
-        productService.fetchProduct(by: index, completion: { product, error in
-            guard let product = product
-            else {
-                return completion(nil, error?.localizedDescription ?? "Could not fetch a product")
-            }
-            completion(product, error?.localizedDescription)
-        })
-    }
-
     func fetchProductList(completion: @escaping (ProductList?, String?) -> ()) {
         isFetching = true
         let startIndex = nextIndex > 0 ? nextIndex : defaultStartIndex
@@ -57,7 +46,7 @@ class ProductListViewModelImpl: ProductListViewModel {
                 self.isFetching = false
                 return completion(nil, error?.localizedDescription ?? "Could not fetch a product list")
             }
-            
+
             if var oldList = self.list {
                 oldList.products.append(contentsOf: newList.products)
                 self.list?.products = oldList.products
