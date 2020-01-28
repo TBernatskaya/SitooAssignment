@@ -44,7 +44,7 @@ class ProductServiceTests: XCTestCase {
     }
 
     func testFetchProductList_returnsError() {
-        let expectation = XCTestExpectation(description: "Received error")
+        let expectation = XCTestExpectation(description: "Received an error")
 
         stub(condition: isHost(self.host)) { _ in
             return OHHTTPStubsResponse(error: self.notConnectedError)
@@ -82,7 +82,7 @@ class ProductServiceTests: XCTestCase {
     }
 
     func testFetchProduct_returnsError() {
-        let expectation = XCTestExpectation(description: "Received error")
+        let expectation = XCTestExpectation(description: "Received an error")
 
         stub(condition: isHost(self.host)) { _ in
             return OHHTTPStubsResponse(error: self.notConnectedError)
