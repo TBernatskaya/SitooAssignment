@@ -56,7 +56,7 @@ class ProductListViewController: UIViewController {
     }
 
     private func updateList() {
-        guard !viewModel.isFetching, !viewModel.hasFetchedAll else { return }
+        guard !viewModel.isFetching, viewModel.hasNextPage else { return }
         // TODO: add loading indicator
         viewModel.fetchProductList(completion: { list, errorMessage in
             if let _ = list {

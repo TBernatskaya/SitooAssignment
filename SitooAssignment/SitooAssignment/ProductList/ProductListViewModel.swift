@@ -10,7 +10,7 @@ import Foundation
 
 protocol ProductListViewModel {
     var list: ProductList? { get }
-    var hasFetchedAll: Bool { get }
+    var hasNextPage: Bool { get }
     var isFetching: Bool { get }
 
     func fetchProductList(completion: @escaping (ProductList?, String?) -> ())
@@ -19,9 +19,9 @@ protocol ProductListViewModel {
 class ProductListViewModelImpl: ProductListViewModel {
 
     let productService: ProductService
-    var hasFetchedAll: Bool {
-        guard let list = list else { return false }
-        return list.totalCount <= list.products.count
+    var hasNextPage: Bool {
+        guard let list = list else { return true }
+        return list.totalCount > list.products.count
     }
     var isFetching: Bool = false
 
@@ -41,9 +41,9 @@ class ProductListViewModelImpl: ProductListViewModel {
         let startIndex = nextIndex > 0 ? nextIndex : defaultStartIndex
 
         productService.fetchProductList(startIndex: startIndex, itemsCount: itemsInPage, completion: { list, error in
+            self.isFetching = false
             guard let newList = list
             else {
-                self.isFetching = false
                 return completion(nil, error?.localizedDescription ?? "Could not fetch a product list")
             }
 
@@ -55,7 +55,6 @@ class ProductListViewModelImpl: ProductListViewModel {
             }
 
             self.nextIndex += self.itemsInPage
-            self.isFetching = false
             completion(list, error?.localizedDescription)
         })
     }

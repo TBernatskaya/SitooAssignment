@@ -62,14 +62,14 @@ class ProductListVMTests: XCTestCase {
 fileprivate extension ProductListViewModelImpl {
     func verifyInitialState() {
         XCTAssertNil(self.list)
-        XCTAssertFalse(self.hasFetchedAll)
+        XCTAssertTrue(self.hasNextPage)
         XCTAssertFalse(self.isFetching)
         XCTAssertEqual(self.nextIndex, 0)
     }
 
     func verifyCompletedState() {
         XCTAssertNotNil(self.list)
-        XCTAssertTrue(self.hasFetchedAll)
+        XCTAssertFalse(self.hasNextPage)
         XCTAssertFalse(self.isFetching)
     }
 }
