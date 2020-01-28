@@ -10,8 +10,8 @@ import Foundation
 
 protocol ProductListViewModel {
     var list: ProductList? { get }
-    func fetchProduct(by index: Int, completion: @escaping (Product?, Error?) -> ())
-    func fetchProductList(completion: @escaping (ProductList?, Error?) -> ())
+    func fetchProduct(by index: Int, completion: @escaping (Product?, String?) -> ())
+    func fetchProductList(completion: @escaping (ProductList?, String?) -> ())
 }
 
 class ProductListViewModelImpl: ProductListViewModel {
@@ -24,18 +24,24 @@ class ProductListViewModelImpl: ProductListViewModel {
         self.productService = productService
     }
 
-    func fetchProduct(by index: Int, completion: @escaping (Product?, Error?) -> ()) {
+    func fetchProduct(by index: Int, completion: @escaping (Product?, String?) -> ()) {
         productService.fetchProduct(by: index, completion: { product, error in
-            guard let product = product else { return completion(nil, error) }
-            completion(product, error)
+            guard let product = product
+            else {
+                return completion(nil, error?.localizedDescription ?? "Could not fetch a product")
+            }
+            completion(product, error?.localizedDescription)
         })
     }
 
-    func fetchProductList(completion: @escaping (ProductList?, Error?) -> ()) {
+    func fetchProductList(completion: @escaping (ProductList?, String?) -> ()) {
         productService.fetchProductList(startIndex: defaultStartIndex, itemsCount: itemsInPage, completion: { list, error in
-            guard let list = list else { return completion(nil, error) }
+            guard let list = list
+            else {
+                return completion(nil, error?.localizedDescription ?? "Could not fetch a product list")
+            }
             self.list = list
-            completion(list, error)
+            completion(list, error?.localizedDescription)
         })
     }
 }

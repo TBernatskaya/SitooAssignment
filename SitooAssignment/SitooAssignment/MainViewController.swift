@@ -37,9 +37,13 @@ class MainViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
 
-        viewModel.fetchProductList(completion: { list, error in
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
+        viewModel.fetchProductList(completion: { list, errorMessage in
+            if let _ = list {
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            } else {
+                self.presentAlert(with: errorMessage)
             }
         })
         updateConstraints()
@@ -55,16 +59,29 @@ class MainViewController: UIViewController {
     }
 
     private func openProductDetails(index: Int) {
-        viewModel.fetchProduct(by: index, completion: { product, error in
-            guard let product = product else { return }
-            DispatchQueue.main.async {
-                self.present(
-                    ProductDetailsViewController(product: product),
-                    animated: true,
-                    completion: nil
-                )
+        viewModel.fetchProduct(by: index, completion: { product, errorMessage in
+            if let product = product {
+                DispatchQueue.main.async {
+                    self.present(
+                        ProductDetailsViewController(product: product),
+                        animated: true,
+                        completion: nil
+                    )
+                }
+            } else {
+                self.presentAlert(with: errorMessage)
             }
         })
+    }
+
+    private func presentAlert(with title: String?) {
+        let title = title ?? "Unknown error"
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(.init(title: "OK", style: .cancel, handler: nil))
+        
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 
