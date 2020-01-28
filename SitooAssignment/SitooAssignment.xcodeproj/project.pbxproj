@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		57279480FF438AD45C2C8ABC /* Pods_SitooAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0907915D812A4DAAAFD18F15 /* Pods_SitooAssignmentTests.framework */; };
 		8B9B46DFB067DE2447CF11D7 /* Pods_SitooAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5241C5046E495CD062DDA30C /* Pods_SitooAssignment.framework */; };
+		D8252B1F23E09E8C0008F7E5 /* ProductServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8252B1E23E09E8C0008F7E5 /* ProductServiceMock.swift */; };
 		D8923EBE23DF1CEF00CF2871 /* productList.json in Resources */ = {isa = PBXBuildFile; fileRef = D8923EBD23DF1CEF00CF2871 /* productList.json */; };
 		D8923EC023DF203B00CF2871 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8923EBF23DF203B00CF2871 /* Product.swift */; };
 		D8923EC323DF370D00CF2871 /* product.json in Resources */ = {isa = PBXBuildFile; fileRef = D8923EC223DF370D00CF2871 /* product.json */; };
@@ -46,6 +47,7 @@
 		5241C5046E495CD062DDA30C /* Pods_SitooAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SitooAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F7156F722930C0180304CAB /* Pods-SitooAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitooAssignment.debug.xcconfig"; path = "Target Support Files/Pods-SitooAssignment/Pods-SitooAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 		A188B3C5CC1BA61BBAA81987 /* Pods-SitooAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitooAssignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-SitooAssignmentTests/Pods-SitooAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D8252B1E23E09E8C0008F7E5 /* ProductServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductServiceMock.swift; sourceTree = "<group>"; };
 		D8923EBD23DF1CEF00CF2871 /* productList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = productList.json; sourceTree = "<group>"; };
 		D8923EBF23DF203B00CF2871 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D8923EC223DF370D00CF2871 /* product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = product.json; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				D8923ED223E083BB00CF2871 /* ProductDetailsVMTests.swift */,
 				D8923ECE23E06A6B00CF2871 /* ProductListVMTests.swift */,
 				D8EA132E23DEF80D009152AC /* ProductServiceTests.swift */,
+				D8252B1E23E09E8C0008F7E5 /* ProductServiceMock.swift */,
 			);
 			path = SitooAssignmentTests;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				D8923ECF23E06A6B00CF2871 /* ProductListVMTests.swift in Sources */,
 				D8923ED323E083BB00CF2871 /* ProductDetailsVMTests.swift in Sources */,
 				D8EA132F23DEF80D009152AC /* ProductServiceTests.swift in Sources */,
+				D8252B1F23E09E8C0008F7E5 /* ProductServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

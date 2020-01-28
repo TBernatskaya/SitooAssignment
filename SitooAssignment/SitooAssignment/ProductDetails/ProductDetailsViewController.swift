@@ -96,6 +96,7 @@ class ProductDetailsViewController: UIViewController {
     }
 
     private func fetchProductDetails() {
+        // TODO: add loading indicator
         viewModel.fetchProduct(by: index, completion: { product, errorMessage in
             if let product = product {
                 DispatchQueue.main.async {
@@ -117,6 +118,7 @@ class ProductDetailsViewController: UIViewController {
 
     }
 
+    // alert logic is duplicated
     private func presentAlert(with title: String?) {
         let title = title ?? "Unknown error"
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)

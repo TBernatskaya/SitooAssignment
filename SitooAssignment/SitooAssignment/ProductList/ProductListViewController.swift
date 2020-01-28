@@ -57,6 +57,7 @@ class ProductListViewController: UIViewController {
 
     private func updateList() {
         guard !viewModel.isFetching, !viewModel.hasFetchedAll else { return }
+        // TODO: add loading indicator
         viewModel.fetchProductList(completion: { list, errorMessage in
             if let _ = list {
                 DispatchQueue.main.async {
@@ -78,6 +79,7 @@ class ProductListViewController: UIViewController {
         }
     }
 
+    // alert logic is duplicated
     private func presentAlert(with title: String?) {
         let title = title ?? "Unknown error"
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
@@ -119,6 +121,7 @@ extension ProductListViewController: UICollectionViewDelegate {
                         didSelectItemAt indexPath: IndexPath) {
         guard let productList = viewModel.list else { return }
         let index = productList.products[indexPath.row].id
+        // TODO: prevent user from double tap
         openProductDetails(index: index)
     }
 }
