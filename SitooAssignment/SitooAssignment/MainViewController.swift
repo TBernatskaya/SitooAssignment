@@ -49,12 +49,17 @@ class MainViewController: UIViewController {
         updateConstraints()
     }
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        let flowLayout = collectionView.collectionViewLayout
+        flowLayout.invalidateLayout()
+    }
+
     private func updateConstraints() {
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30)
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60)
         ])
     }
 
@@ -130,7 +135,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 44)
+        return CGSize(width: collectionView.frame.size.width, height: 44)
     }
 
     func collectionView(_ collectionView: UICollectionView,
