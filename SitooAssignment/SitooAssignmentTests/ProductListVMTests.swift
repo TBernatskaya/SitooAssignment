@@ -62,6 +62,8 @@ class ProductListVMTests: XCTestCase {
         var shouldReturnError: Bool
         let error = NSError(domain: "Service", code: 456, userInfo: nil)
 
+        func fetchImage(by productID: Int, completion: @escaping (UIImage?) -> ()) {}
+
         func fetchProduct(by productID: Int, completion: @escaping (Product?, Error?) -> ()) {}
 
         func fetchProductList(startIndex: Int, itemsCount: Int, completion: @escaping (ProductList?, Error?) -> ()) {

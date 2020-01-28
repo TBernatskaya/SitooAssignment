@@ -60,6 +60,8 @@ class ProductDetailsVMTests: XCTestCase {
             }
         }
 
+        func fetchImage(by productID: Int, completion: @escaping (UIImage?) -> ()) {}
+
         func fetchProductList(startIndex: Int, itemsCount: Int, completion: @escaping (ProductList?, Error?) -> ()) {}
     }
     

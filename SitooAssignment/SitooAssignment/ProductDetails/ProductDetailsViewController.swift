@@ -20,15 +20,18 @@ class ProductDetailsViewController: UIViewController {
 
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.titleLabel,
+                                                       self.productImage,
                                                        self.priceLabel,
                                                        self.descriptionLabel,
                                                        self.deliveryStatusLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.distribution = .equalSpacing
+        stackView.distribution = .fillProportionally
         stackView.spacing = 4
         return stackView
     }()
+
+    var productImage = UIImageView()
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -74,16 +77,22 @@ class ProductDetailsViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stackView)
         setupConstraints()
+        fetchProductImage()
         fetchProductDetails()
     }
 
     private func setupConstraints() {
+        productImage.contentMode = .scaleAspectFit
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
-            stackView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: 30),
+            stackView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -60),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30)
         ])
+    }
+
+    private func fetchProductImage() {
+        viewModel.fetchImage(by: index, completion: { self.productImage.image = $0 })
     }
 
     private func fetchProductDetails() {
